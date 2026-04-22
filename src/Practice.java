@@ -108,8 +108,9 @@ public class Practice {
     return concat;
   }
 
-  // Time Complexity:
-  // Space Complexity: 
+  // Time Complexity:O(1)
+  // Space Complexity:O(1)
+  // this is constant and will always run 4 times.
   // Remember to define your variables!
   public static int cubic(int n, int a, int b, int c, int d) {
     int result = d;
