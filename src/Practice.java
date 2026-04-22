@@ -139,8 +139,39 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.length
-    return -1;
+    Map<Integer, Integer> freqMap = new HashMap<>();
+    Map<Integer, Integer> firstSeen = new HashMap<>();
+    int maxCount = 0;
+    int index = 0;
+    for (int num : nums) {
+        if (!freqMap.containsKey(num)) {
+            freqMap.put(num, 1);
+            firstSeen.put(num, index);
+        } else {
+            freqMap.put(num, freqMap.get(num) + 1);
+        }
+        if(freqMap.get(num) > maxCount) {
+            maxCount = freqMap.get(num);
+        }
+        index++;
+    }
+
+    int mostFrequent = nums[0];
+    for(Map.Entry<Integer, Integer> entry : freqMap.entrySet()) {
+        int num = entry.getKey();
+        int count = entry.getValue();
+
+        if (count == maxCount) {
+            if (mostFrequent == nums[0] || firstSeen.get(num) < firstSeen.get(mostFrequent)) {
+                mostFrequent = num;
+            }
+        }
+    }
+    
+    return mostFrequent;
   }
+
+
 
   /**
    * Returns the integer that shows up most frequently in an array.
