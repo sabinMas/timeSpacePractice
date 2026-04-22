@@ -199,8 +199,8 @@ public class Practice {
       for (int i = 1; i < nums.length; i++) {
           if (nums[i] == nums[i-1]) {
               currentCount++;
-          } else{
-               if(currentCount > maxCount) {
+          } else {
+              if(currentCount > maxCount) {
                   maxCount = currentCount;
                   result = nums[i-1];
               }

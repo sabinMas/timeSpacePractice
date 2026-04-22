@@ -18,5 +18,15 @@ public class PracticeTest {
 
   }
 
+  @Test
+  public void testMostCommonSpace() {
+    //Arrange
+    int[] nums =  {2, 4, 6, 8, 10, 10, 10, 7, 7, 7, 7, 7};
+    //Act
+    int actual = Practice.mostCommonSpaceEfficient(nums);
+    //Assert
+    assertEquals(7, actual);
+  }
+
   // Hints: They are static methods, so you will use the full Practice.mostCommonTimeEfficient for method calls
 }
