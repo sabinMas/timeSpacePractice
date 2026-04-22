@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -189,8 +190,26 @@ public class Practice {
    * @return the integer that shows up most commonly
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
-    // in O(1) space.
-    return -1;
+      Arrays.sort(nums);
+      
+      int maxCount = 1;
+      int currentCount = 1;
+      int result = nums[0];
+      
+      for (int i = 1; i < nums.length; i++) {
+          if (nums[i] == nums[i-1]) {
+              currentCount++;
+          } else{
+               if(currentCount > maxCount) {
+                  maxCount = currentCount;
+                  result = nums[i-1];
+              }
+              currentCount = 1;
+          }
+      }
+      if (currentCount > maxCount) {
+          result = nums[nums.length - 1];
+      }
+      return result;
   }
 }
