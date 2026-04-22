@@ -162,12 +162,12 @@ public class Practice {
         int count = entry.getValue();
 
         if (count == maxCount) {
-            if (mostFrequent == nums[0] || firstSeen.get(num) < firstSeen.get(mostFrequent)) {
+            if (firstSeen.get(num) < firstSeen.get(mostFrequent)) {
                 mostFrequent = num;
             }
         }
     }
-    
+
     return mostFrequent;
   }
 
