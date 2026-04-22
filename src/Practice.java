@@ -84,9 +84,9 @@ public class Practice {
     return result;
   }
 
-  // Time Complexity:
-  // Space Complexity:
-  // Remember to define your variables!
+  // Time Complexity:O(rows*columns)
+  // Space Complexity:O(rows*columns)
+  // n would be the total number of cells in the rectangle
   public static char[][] initCharRect(int rows, int cols) {
     return new char[rows][cols];
   }
